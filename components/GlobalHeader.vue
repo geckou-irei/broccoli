@@ -43,9 +43,9 @@ export default {
   display: flex;
   height: 80px;
   align-items: center;
+  justify-content: center;
   font-size: f.size('small');
   font-weight: f.weight('bold');
-  z-index: v.zIndex('nav');
   &::after {
     content: "";
     position: absolute;

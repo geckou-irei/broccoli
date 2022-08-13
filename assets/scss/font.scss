@@ -1,5 +1,6 @@
 @use 'sass:math';
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap');
+@import url("https://use.typekit.net/hlf3ofz.css");
 
 $fontBaseSizeMap: (
   'desktop': 18px,
@@ -19,12 +20,13 @@ $fontSizeMap: (
   'small'  : calcRemFontSize( 14 ),
   'smaller': calcRemFontSize( 12 ),
   'min'    : calcRemFontSize( 10 ),
-  'heading': calcRemFontSize( 48 ),
+  'heading': calcRemFontSize( 56 ),
 );
 
 $fontFamilyMap: (
   'base'   : 'M PLUS Rounded 1c',
-  'english': 'Cantarell'
+  'english': 'Cantarell',
+  'heading'  : 'josefin-slab'
 );
 
 $fontWeight: (
@@ -37,8 +39,11 @@ $lineHeightMap: (
 );
 
 $letterSpacingMap: (
-  'normal'  : .16em,
-  'narrowed': .08em
+  'long'    : .35em,
+  'normal'  : .02em,
+  'space'   : .16em,
+  'narrowed': .08em,
+  'narrow'  : -.05em
 );
 
 @function baseSize($key) {

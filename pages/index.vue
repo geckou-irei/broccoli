@@ -7,7 +7,8 @@
     <div :class="[$style.wrapper, isShow ? '' : $style.show]">
       <GlobalHeader />
       <div :class="$style.container">
-        
+        <MainVisual />
+        <GlobalMenu />
       </div>
     </div>
     <section></section>
@@ -20,6 +21,28 @@ export default {
   data () {
     return {
       isShow : true,
+      sections : [
+        {
+          name  : 'CONCEPT',
+          nameJp: 'コンセプト',
+          component: 'SectionOfConcept'
+        },
+        {
+          name  : 'MENU&DRINK',
+          nameJp: 'メニュー&ドリンク',
+          component: 'SectionOfMenu'
+        },
+        {
+          name  : 'GALLERY',
+          nameJp: 'ギャラリー',
+          component: 'SectionOfGallery'
+        },
+        {
+          name  : 'LOCATION',
+          nameJp: 'ロケーション',
+          component: 'SectionOfLocation'
+        },
+      ]
     }
   },
   mounted() {
@@ -36,7 +59,6 @@ export default {
 @use "~/assets/scss/value" as v;
 @use "~/assets/scss/font" as f;
 @use "~/assets/scss/color" as c;
-
 
 .loading_anime {
   transition: all 1s;
@@ -58,6 +80,7 @@ export default {
 
 .container {
   margin: 0 auto;
+  max-width: 1480px;
   height: 100vh;
 }
 
