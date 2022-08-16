@@ -1,28 +1,20 @@
 <template>
-  <div
-    :class="$style.mainvisual"
-  >
-    <div
-      :class="$style.inner"
-    >
-      <div
-        :class="$style.lead_bloc"
-      >
-        <h2
-          :class="$style.heading"
-        >
+  <div :class="$style.mainvisual">
+    <div :class="$style.inner">
+      <div :class="$style.lead_bloc">
+        <h2 :class="$style.heading">
           <span>ちいさな</span>
           <span>しあわせ</span>
           <span>ここにある</span>
         </h2>
       </div>
-      <div
-        :class="$style.image_bloc"
-      >
-        <figure
-          :class="$style.image_bloc_figure"
-        >
-          <img :class="$style.image_bloc_mask" src="../assets/img/mask_02.jpg" alt="カップルの写真">
+      <div :class="$style.image_bloc">
+        <figure :class="$style.image_bloc_figure">
+          <img
+            :class="$style.image_bloc_mask"
+            src="../assets/img/mask_02.jpg"
+            alt="カップルの写真"
+          />
         </figure>
       </div>
     </div>
@@ -36,10 +28,10 @@
 export default {
   name: "MainVisual",
   // data () {
-    
+
   // },
   // mounted() {
-    
+
   // }
 };
 </script>
@@ -50,7 +42,7 @@ export default {
 @use "~/assets/scss/color" as c;
 
 .mainvisual {
-  margin-top: 3.5rem;
+  margin-top: 8rem;
 }
 
 .inner {
@@ -64,13 +56,12 @@ export default {
 
 .heading {
   font-size: clamp(1.5rem, 0.879rem + 3.1vw, 3.38rem);
-  font-weight: f.weight('bold');
-  letter-spacing: f.letterSpacing('long');
+  font-weight: f.weight("bold");
+  letter-spacing: f.letterSpacing("long");
   span {
     display: block;
   }
 }
-
 
 .image_bloc {
   width: 50%;
@@ -81,5 +72,4 @@ export default {
     mask-size: auto 100%;
   }
 }
-
 </style>

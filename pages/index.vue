@@ -1,6 +1,6 @@
 <template>
   <main id="frontPage">
-    <LoadingAnimetion 
+    <LoadingAnimetion
       :v-if="isShow"
       :class="[$style.loading_anime, isShow ? '' : $style.hide]"
     />
@@ -9,6 +9,10 @@
       <div :class="$style.container">
         <MainVisual />
         <GlobalMenu />
+        <SectionConcept
+          :class="$style.space"
+          :sections="sections"
+        />
       </div>
     </div>
     <section></section>
@@ -18,40 +22,45 @@
 <script>
 export default {
   name: "frontPage",
-  data () {
+  data() {
     return {
-      isShow : true,
-      sections : [
+      isShow: true,
+      currentSection: 'top',
+      sections: [
         {
-          name  : 'CONCEPT',
-          nameJp: 'コンセプト',
-          component: 'SectionOfConcept'
+          id: "concept",
+          name: "CONCEPT",
+          nameJp: "コンセプト",
+          component: "SectionConcept",
         },
         {
-          name  : 'MENU&DRINK',
-          nameJp: 'メニュー&ドリンク',
-          component: 'SectionOfMenu'
+          id: "menu",
+          name: "MENU&DRINK",
+          nameJp: "メニュー&ドリンク",
+          component: "SectionMenu",
         },
         {
-          name  : 'GALLERY',
-          nameJp: 'ギャラリー',
-          component: 'SectionOfGallery'
+          id: "gallery",
+          name: "GALLERY",
+          nameJp: "ギャラリー",
+          component: "SectionGallery",
         },
         {
-          name  : 'LOCATION',
-          nameJp: 'ロケーション',
-          component: 'SectionOfLocation'
+          id: "location",
+          name: "LOCATION",
+          nameJp: "ロケーション",
+          component: "SectionLocation",
         },
-      ]
-    }
+      ],
+    };
   },
   mounted() {
     this.$nextTick(() => {
       setTimeout(() => {
-        this.isShow = false
-      }, 2000)
-    })
-  }
+        this.isShow = false;
+      }, 2000);
+    });
+  },
 };
 </script>
 
@@ -78,10 +87,14 @@ export default {
   }
 }
 
+.space {
+  margin-top: 11rem;
+  padding: 0 2rem 0 10rem;
+}
+
 .container {
   margin: 0 auto;
   max-width: 1480px;
   height: 100vh;
 }
-
 </style>

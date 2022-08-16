@@ -93,7 +93,6 @@ export default {
   name: "LoadingAnimetion",
   mounted() {
     this.PathCheck();
-    
   },
   methods: {
     PathCheck() {
