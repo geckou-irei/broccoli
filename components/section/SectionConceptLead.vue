@@ -1,5 +1,5 @@
 <template>
-  <div :class="$style.concept_lead">
+  <div :class="[$style.concept_lead, visible ? $style.active : '']">
     <svg viewBox="0 0 1119.9 272.54">
       <defs>
         <style>
@@ -105,6 +105,13 @@
 
 export default {
   name: "SectionConceptLead",
+  props: {
+    visible: {
+      required: false,
+      type: Boolean,
+      default: false,
+    },
+  },
   // data () {
 
   // },

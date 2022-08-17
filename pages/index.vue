@@ -11,11 +11,12 @@
         <GlobalMenu />
         <SectionConcept
           :class="$style.space"
-          :sections="sections"
+        />
+        <SectionMenu 
+          :class="$style.space"
         />
       </div>
     </div>
-    <section></section>
   </main>
 </template>
 
