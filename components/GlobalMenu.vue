@@ -23,6 +23,12 @@
 <script>
 export default {
   name: "GlobalMenu",
+  props: {
+    section: {
+      required: true,
+      type: Array,
+    },
+  },
   // data () {
 
   // },
@@ -40,7 +46,7 @@ export default {
 .global_list {
   position: fixed;
   top: 30rem;
-  left: calc(v.$val * 4);
+  left: 1.2rem;
   display: flex;
   flex-direction: column;
   gap: 0.2rem 0;
