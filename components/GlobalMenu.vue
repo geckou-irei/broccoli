@@ -24,7 +24,7 @@
 export default {
   name: "GlobalMenu",
   props: {
-    section: {
+    sections: {
       required: true,
       type: Array,
     },

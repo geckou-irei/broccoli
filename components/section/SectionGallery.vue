@@ -7,7 +7,24 @@
         >
         <span :class="$style.ja">ギャラリー</span>
       </h2>
-      <div :class="$style.content"></div>
+      <div :class="$style.content">
+        <div :class="$style.gallery_image_container">
+          <figure :class="$style.gallery_image">
+            <img src="@/assets/img/cafe.jpg" alt="" />
+          </figure>
+          <div :class="$style.gallery_thumbnail">
+            <div :class="$style.gallery_thumbnail_list">
+              <div :class="$style.gallery_thumbnail_item">
+                <figure :class="$style.gallery_thumbnail_image">
+                  <img src="" alt="" />
+                </figure>
+                <h3 :class="$style.gallery_thumbnail_title"></h3>
+                <time class="thumb-date" datetime=""></time>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -58,5 +75,9 @@ export default {
 
 .content {
   margin-top: 8rem;
+}
+
+.gallery_image {
+  max-width: 800px;
 }
 </style>

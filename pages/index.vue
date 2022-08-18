@@ -78,6 +78,7 @@ export default {
 
 .wrapper {
   position: relative;
+  min-width: 1000px;
   opacity: 0;
   transition: all 1.8s;
   &.show {
