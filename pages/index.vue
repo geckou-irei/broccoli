@@ -8,13 +8,10 @@
       <GlobalHeader />
       <div :class="$style.container">
         <MainVisual />
-        <GlobalMenu />
-        <SectionConcept
-          :class="$style.space"
-        />
-        <SectionMenu 
-          :class="$style.space"
-        />
+        <GlobalMenu :sections="sections" />
+        <SectionConcept :class="$style.space" />
+        <SectionMenu :class="$style.space" />
+        <SectionGallery :class="$style.space" />
       </div>
     </div>
   </main>
@@ -26,7 +23,7 @@ export default {
   data() {
     return {
       isShow: true,
-      currentSection: 'top',
+      currentSection: "top",
       sections: [
         {
           id: "concept",
@@ -81,6 +78,7 @@ export default {
 
 .wrapper {
   position: relative;
+  min-width: 1000px;
   opacity: 0;
   transition: all 1.8s;
   &.show {
@@ -90,7 +88,7 @@ export default {
 
 .space {
   margin-top: 11rem;
-  padding: 0 2rem 0 10rem;
+  padding: 0 2rem 0 8rem;
 }
 
 .container {

@@ -1,7 +1,7 @@
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: "static",
-  ssr: true,
+  ssr: false,
 
   router: {
     base: "",
@@ -45,5 +45,10 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     transpile: ["gsap"],
+    extend(config, { isDev }) {
+      if (!isDev) {
+        config.output.publicPath = "./static/";
+      }
+    },
   },
 };
