@@ -9,12 +9,8 @@
       <div :class="$style.container">
         <MainVisual />
         <GlobalMenu />
-        <SectionConcept
-          :class="$style.space"
-        />
-        <SectionMenu 
-          :class="$style.space"
-        />
+        <SectionConcept :class="$style.space" />
+        <SectionMenu :class="$style.space" />
       </div>
     </div>
   </main>
@@ -26,7 +22,7 @@ export default {
   data() {
     return {
       isShow: true,
-      currentSection: 'top',
+      currentSection: "top",
       sections: [
         {
           id: "concept",
