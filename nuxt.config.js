@@ -4,7 +4,7 @@ export default {
   ssr: false,
 
   router: {
-    base: "/broccoli.github.io/",
+    base: "/broccoli/",
   },
   generate: {
     dir: "docs",
@@ -25,7 +25,7 @@ export default {
       {
         rel: "icon",
         type: "image/x-icon",
-        href: "/broccoli.github.io/favicon.ico",
+        href: "/broccoli/favicon.ico",
       },
     ],
   },
