@@ -4,7 +4,8 @@ export default {
   ssr: false,
 
   router: {
-    base: "",
+    // base: "",
+    mode: 'hash',
   },
   generate: {
     dir: "docs",
