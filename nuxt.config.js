@@ -4,7 +4,7 @@ export default {
   ssr: false,
 
   router: {
-    base: "",
+    base: "/broccoli.github.io/",
   },
   generate: {
     dir: "docs",
