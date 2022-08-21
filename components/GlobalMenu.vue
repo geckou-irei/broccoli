@@ -56,7 +56,7 @@ export default {
 
 .global_link {
   position: relative;
-  display: block;
+  display: inline-block;
   font-size: f.size("smaller");
   font-weight: f.weight("bold");
   color: c.$mainBlue;

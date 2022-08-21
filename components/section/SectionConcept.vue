@@ -8,14 +8,7 @@
         <span :class="$style.ja">コンセプト</span>
       </h2>
       <div :class="$style.content">
-        <SectionConceptLead
-          :visible="visible"
-          v-inview:enter="
-            () => {
-              visible = true;
-            }
-          "
-        />
+        <SectionConceptLead />
         <div :class="$style.section_concept_image">
           <div :class="$style.section_concept_image_container">
             <figure>
@@ -43,11 +36,13 @@
 
 export default {
   name: "SectionConcept",
-  data() {
-    return {
-      visible: false,
-    };
-  },
+  // data() {
+
+  // },
+  // mounted() {},
+  // methods: {
+
+  // },
 };
 </script>
 

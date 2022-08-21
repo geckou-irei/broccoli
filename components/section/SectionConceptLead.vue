@@ -1,5 +1,8 @@
 <template>
-  <div :class="[$style.concept_lead, visible ? $style.active : '']">
+  <div
+    :class="[$style.concept_lead, obv ? $style.visible : '']"
+    v-inview:enter="() => (obv = true)"
+  >
     <svg viewBox="0 0 1119.9 272.54">
       <defs>
         <style>
@@ -105,16 +108,18 @@
 
 export default {
   name: "SectionConceptLead",
-  props: {
-    visible: {
-      required: false,
-      type: Boolean,
-      default: false,
-    },
-  },
-  // data () {
-
+  // props: {
+  //   obv: {
+  //     required: false,
+  //     type: Boolean,
+  //     default: false,
+  //   },
   // },
+  data() {
+    return {
+      obv: false,
+    };
+  },
   mounted() {
     this.PathCheck();
   },
@@ -143,8 +148,62 @@ export default {
 @use "~/assets/scss/color" as c;
 
 .concept_lead {
+  opacity: 0;
+  transition: opacity 0.5s;
   svg {
     width: 18.5rem;
+  }
+  &.visible {
+    opacity: 1;
+    .a_1 {
+      stroke-dasharray: 478px;
+      animation: logo_01 0.9s ease-in both 0s;
+    }
+
+    .a_2 {
+      stroke-dasharray: 817px;
+      animation: logo_02 0.9s ease-in both 0.2s;
+    }
+
+    .a_3 {
+      stroke-dasharray: 570px;
+      animation: logo_03 0.9s ease-in both 0.35s;
+    }
+
+    .a_4 {
+      stroke-dasharray: 391px;
+      animation: logo_04 0.9s ease-in both 0.5s;
+    }
+
+    .a_5 {
+      stroke-dasharray: 527px;
+      animation: logo_05 0.9s ease-in both 0.7s;
+    }
+
+    .a_6 {
+      stroke-dasharray: 625px;
+      animation: logo_06 0.9s ease-in both 0.8s;
+    }
+
+    .a_7 {
+      stroke-dasharray: 585px;
+      animation: logo_07 0.9s ease-in both 0.9s;
+    }
+
+    .a_8 {
+      stroke-dasharray: 452px;
+      animation: logo_08 0.9s ease-in both 1s;
+    }
+
+    .a_9 {
+      stroke-dasharray: 428px;
+      animation: logo_08 0.9s ease-in both 1.1s;
+    }
+
+    .a_10 {
+      stroke-dasharray: 514px;
+      animation: logo_08 0.9s ease-in both 1.2s;
+    }
   }
 }
 
@@ -152,56 +211,6 @@ export default {
   fill: #ccc;
   stroke: c.$darkBlack;
   stroke-width: 1px;
-}
-
-.a_1 {
-  stroke-dasharray: 478px;
-  animation: logo_01 0.9s ease-in both 0s;
-}
-
-.a_2 {
-  stroke-dasharray: 817px;
-  animation: logo_02 0.9s ease-in both 0.2s;
-}
-
-.a_3 {
-  stroke-dasharray: 570px;
-  animation: logo_03 0.9s ease-in both 0.35s;
-}
-
-.a_4 {
-  stroke-dasharray: 391px;
-  animation: logo_04 0.9s ease-in both 0.5s;
-}
-
-.a_5 {
-  stroke-dasharray: 527px;
-  animation: logo_05 0.9s ease-in both 0.7s;
-}
-
-.a_6 {
-  stroke-dasharray: 625px;
-  animation: logo_06 0.9s ease-in both 0.8s;
-}
-
-.a_7 {
-  stroke-dasharray: 585px;
-  animation: logo_07 0.9s ease-in both 0.9s;
-}
-
-.a_8 {
-  stroke-dasharray: 452px;
-  animation: logo_08 0.9s ease-in both 1s;
-}
-
-.a_9 {
-  stroke-dasharray: 428px;
-  animation: logo_08 0.9s ease-in both 1.1s;
-}
-
-.a_10 {
-  stroke-dasharray: 514px;
-  animation: logo_08 0.9s ease-in both 1.2s;
 }
 
 @keyframes logo_01 {

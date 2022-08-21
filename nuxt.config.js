@@ -34,7 +34,16 @@ export default {
   css: ["~/node_modules/ress/dist/ress.min.css", "~/assets/scss/base.scss"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [
+    {
+      src: "@/plugins/inview.js",
+      ssr: false,
+    },
+    {
+      src: "@/plugins/locomotiveScroll.js",
+      ssr: false,
+    },
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -43,6 +52,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     "@nuxtjs/eslint-module",
+    "nuxt-gsap-module",
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

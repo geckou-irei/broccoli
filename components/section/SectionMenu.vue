@@ -80,7 +80,7 @@
 // import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export default {
-  name: "SectionConcept",
+  name: "SectionMenu",
   // data () {
 
   // },
