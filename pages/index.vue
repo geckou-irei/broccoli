@@ -5,14 +5,13 @@
       :class="[$style.loading_anime, isShow ? '' : $style.hide]"
     />
     <GlobalHeader />
+    <GlobalMenu :sections="sections" />
     <div
-      :class="[$style.wrapper, isShow ? '' : $style.show]"
-      data-scroll-container
+      :class="[$style.wrapper, 'site_main_content', isShow ? '' : $style.show]"
     >
-      <div :class="$style.container">
-        <MainVisual />
-        <GlobalMenu :sections="sections" />
-        <SectionConcept :class="[$style.space, $style.concept]" />
+      <div :class="$style.container" data-scroll-container>
+        <MainVisual data-scroll-section data-scroll-section-id="section0" />
+        <SectionConcept :class="[$style.space, 'concept']" />
         <SectionMenu :class="[$style.space, $style.menu]" />
         <SectionGallery :class="[$style.space, $style.gallery]" />
       </div>
@@ -22,9 +21,8 @@
 
 <script>
 import { Power4, Circ } from "gsap";
-
 export default {
-  name: "frontPage",
+  name: "FrontPage",
   data() {
     return {
       lmS: null,
@@ -69,11 +67,45 @@ export default {
   },
   methods: {
     locoMotive() {
-      this.lmS = new this.locomotiveScroll({
+      const locoScroll = new this.locomotiveScroll({
         el: document.querySelector("[data-scroll-container]"),
         smooth: true,
       });
-      console.log("lmS", this.lmS);
+      locoScroll.on("scroll", this.$ScrollTrigger.update);
+      this.$ScrollTrigger.refresh();
+      this.$ScrollTrigger.scrollerProxy(".site_main_content", {
+        scrollTop(value) {
+          return arguments.length
+            ? locoScroll.scrollTo(value, 0, 0)
+            : locoScroll.scroll.instance.scroll.y;
+        },
+        getBoundingClientRect() {
+          return {
+            top: 0,
+            left: 0,
+            width: window.innerWidth,
+            height: window.innerHeight,
+          };
+        },
+        pinType: document.querySelector(".site_main_content").style.transform
+          ? "transform"
+          : "fixed",
+      });
+      this.$gsap.registerPlugin(this.$ScrollTrigger);
+      const conceptFades = document.querySelectorAll(".concept_fade");
+      console.log(conceptFades);
+
+      conceptFades.forEach((conceptFade, index) => {
+        this.$gsap.to(conceptFade, {
+          scrollTrigger: {
+            trigger: conceptFade,
+            start: "top bottom-=300",
+            end: "top top",
+            once: true,
+            toggleClass: { targets: conceptFade, className: "visible" },
+          },
+        });
+      });
     },
     mainVisualAnimetion() {
       const tl = this.$gsap.timeline();
@@ -115,7 +147,7 @@ export default {
             opacity: 1,
             ease: Power4.out,
           },
-          "-=.4"
+          "-=.35"
         )
         .to(
           mainTitle03,
@@ -124,7 +156,7 @@ export default {
             opacity: 1,
             ease: Power4.out,
           },
-          "-=.4"
+          "-=.3"
         )
         .to(
           header,

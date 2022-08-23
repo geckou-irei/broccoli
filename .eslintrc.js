@@ -12,6 +12,8 @@ module.exports = {
   plugins: [],
   // add your custom rules here
   rules: {
-    newIsCap: 0,
+    "new-Cap": "false",
+    "new-cap": 0,
+    "new-cap": ["error", { newIsCap: false }],
   },
 };

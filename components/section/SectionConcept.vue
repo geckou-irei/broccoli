@@ -1,5 +1,10 @@
 <template>
-  <section :class="$style.section_concept">
+  <section
+    :class="$style.section_concept"
+    data-scroll-section
+    data-scroll-section-id="section1"
+    data-scroll-section-inview
+  >
     <div :class="$style.container">
       <h2 :class="$style.lead_title">
         <span :class="$style.en"
@@ -11,17 +16,37 @@
         <SectionConceptLead />
         <div :class="$style.section_concept_image">
           <div :class="$style.section_concept_image_container">
-            <figure>
-              <img src="~/assets/img/concept_01.png" alt="" />
+            <figure
+              data-scroll
+              data-scroll-speed="1"
+              :class="[$style.concept_figure, 'concept_fade']"
+            >
+              <img
+                :class="[$style.concept_image, 'concept_image']"
+                src="~/assets/img/concept_01.png"
+                alt=""
+              />
             </figure>
-            <div :class="$style.section_concept_image_text">
+            <div
+              data-scroll
+              data-scroll-speed="2"
+              :class="[$style.section_concept_image_text, 'concept_fade']"
+            >
               <p v-for="item in 4" :key="item">
                 ダミーテキストダミーテキストダミーテキスト<br />
                 ダミーテキストダミーテキストダミーテキスト
               </p>
             </div>
-            <figure>
-              <img src="~/assets/img/concept_02.png" alt="" />
+            <figure
+              data-scroll
+              data-scroll-speed="1"
+              :class="[$style.concept_figure, 'concept_fade']"
+            >
+              <img
+                :class="[$style.concept_image, 'concept_image']"
+                src="~/assets/img/concept_02.png"
+                alt=""
+              />
             </figure>
           </div>
         </div>
@@ -31,14 +56,13 @@
 </template>
 
 <script>
-// import { gsap } from "gsap";
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
-
 export default {
   name: "SectionConcept",
-  // data() {
-
-  // },
+  data() {
+    return {
+      visible: false,
+    };
+  },
   // mounted() {},
   // methods: {
 
@@ -83,8 +107,9 @@ export default {
   margin-top: 8rem;
   &_container {
     display: flex;
+    justify-content: center;
   }
-  figure {
+  .concept_figure {
     width: 20rem;
     height: auto;
     &:nth-of-type(2) {
@@ -93,7 +118,7 @@ export default {
   }
   &_text {
     padding: 0 2rem;
-    margin-top: 8rem;
+    margin-top: 2.5rem;
     font-size: clamp(0.75rem, 0.708rem + 0.21vw, 0.875rem);
     white-space: nowrap;
     p {
@@ -101,6 +126,25 @@ export default {
         margin-top: 2rem;
       }
     }
+  }
+}
+</style>
+
+<style lang="scss">
+.concept_fade {
+  opacity: 0;
+  transition: opacity 0.8s linear 0s;
+  overflow: hidden;
+  &.visible {
+    opacity: 1;
+    & .concept_image {
+      transform: scale(1);
+    }
+  }
+  .concept_image {
+    transform-origin: center;
+    transform: scale(1.4);
+    transition: transform 3s cubic-bezier(0.19, 1, 0.22, 1) 0s;
   }
 }
 </style>
