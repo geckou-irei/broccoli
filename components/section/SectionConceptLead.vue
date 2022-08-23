@@ -120,24 +120,24 @@ export default {
       obv: false,
     };
   },
-  mounted() {
-    this.PathCheck();
-  },
+  // mounted() {
+  //   this.PathCheck();
+  // },
   methods: {
-    PathCheck() {
-      document.addEventListener("DOMContentLoaded", function () {
-        console.log(document.getElementById("1").getTotalLength());
-        console.log(document.getElementById("2").getTotalLength());
-        console.log(document.getElementById("3").getTotalLength());
-        console.log(document.getElementById("4").getTotalLength());
-        console.log(document.getElementById("5").getTotalLength());
-        console.log(document.getElementById("6").getTotalLength());
-        console.log(document.getElementById("7").getTotalLength());
-        console.log(document.getElementById("8").getTotalLength());
-        console.log(document.getElementById("9").getTotalLength());
-        console.log(document.getElementById("10").getTotalLength());
-      });
-    },
+    // PathCheck() {
+    //   document.addEventListener("DOMContentLoaded", function () {
+    //     console.log(document.getElementById("1").getTotalLength());
+    //     console.log(document.getElementById("2").getTotalLength());
+    //     console.log(document.getElementById("3").getTotalLength());
+    //     console.log(document.getElementById("4").getTotalLength());
+    //     console.log(document.getElementById("5").getTotalLength());
+    //     console.log(document.getElementById("6").getTotalLength());
+    //     console.log(document.getElementById("7").getTotalLength());
+    //     console.log(document.getElementById("8").getTotalLength());
+    //     console.log(document.getElementById("9").getTotalLength());
+    //     console.log(document.getElementById("10").getTotalLength());
+    //   });
+    // },
   },
 };
 </script>
@@ -150,6 +150,7 @@ export default {
 .concept_lead {
   opacity: 0;
   transition: opacity 0.5s;
+  transition-delay: 0.8s;
   svg {
     width: 18.5rem;
   }

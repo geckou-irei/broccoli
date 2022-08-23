@@ -1,7 +1,7 @@
 <template>
   <section :class="$style.section_menu">
     <div :class="$style.container">
-      <h2 :class="$style.lead_title">
+      <h2 :class="[$style.lead_title, 'lead_title']">
         <span :class="$style.en"
           ><span :class="$style.en_change">MENU</span>&amp;DRINK</span
         >
@@ -10,34 +10,30 @@
       <div :class="$style.content">
         <ul :class="$style.menu_list">
           <li :class="$style.menu_item">
-            <a :class="$style.menu_item_link" href="/">
-              <figure :class="$style.menu_item_image">
-                <img src="@/assets/img/menu_01.png" alt="" />
-              </figure>
-              <div :class="$style.menu_item_description">
-                <h3 :class="$style.menu_item_title">タルタルチキン丼</h3>
-                <div :class="$style.menu_item_text">
-                  <p>テキストテキストテキスト</p>
-                  <p>テキストテキストテキスト</p>
-                  <p>テキストテキストテキスト</p>
-                </div>
+            <figure :class="$style.menu_item_image">
+              <img src="@/assets/img/menu_01.png" alt="" />
+            </figure>
+            <div :class="$style.menu_item_description">
+              <h3 :class="$style.menu_item_title">タルタルチキン丼</h3>
+              <div :class="$style.menu_item_text">
+                <p>テキストテキストテキスト</p>
+                <p>テキストテキストテキスト</p>
+                <p>テキストテキストテキスト</p>
               </div>
-            </a>
+            </div>
           </li>
           <li :class="$style.menu_item">
-            <a :class="$style.menu_item_link" href="/">
-              <figure :class="$style.menu_item_image">
-                <img src="@/assets/img/menu_02.png" alt="" />
-              </figure>
-              <div :class="$style.menu_item_description">
-                <h3 :class="$style.menu_item_title">タルタルチキン丼</h3>
-                <div :class="$style.menu_item_text">
-                  <p>テキストテキストテキスト</p>
-                  <p>テキストテキストテキスト</p>
-                  <p>テキストテキストテキスト</p>
-                </div>
+            <figure :class="$style.menu_item_image">
+              <img src="@/assets/img/menu_02.png" alt="" />
+            </figure>
+            <div :class="$style.menu_item_description">
+              <h3 :class="$style.menu_item_title">タルタルチキン丼</h3>
+              <div :class="$style.menu_item_text">
+                <p>テキストテキストテキスト</p>
+                <p>テキストテキストテキスト</p>
+                <p>テキストテキストテキスト</p>
               </div>
-            </a>
+            </div>
           </li>
           <li :class="$style.menu_item">
             <a :class="$style.menu_item_link" href="/">

@@ -6,12 +6,17 @@
     />
     <GlobalHeader />
     <GlobalMenu :sections="sections" />
-    <div
-      :class="[$style.wrapper, 'site_main_content', isShow ? '' : $style.show]"
-    >
-      <div :class="$style.container" data-scroll-container>
+    <div :class="[$style.wrapper, isShow ? '' : $style.show]">
+      <div
+        :class="[$style.container, 'site_main_content']"
+        data-scroll-container
+      >
         <MainVisual data-scroll-section data-scroll-section-id="section0" />
-        <SectionConcept :class="[$style.space, 'concept']" />
+        <SectionConcept
+          data-scroll-section
+          data-scroll-section-id="section1"
+          :class="[$style.space, 'concept']"
+        />
         <SectionMenu :class="[$style.space, $style.menu]" />
         <SectionGallery :class="[$style.space, $style.gallery]" />
       </div>
@@ -92,9 +97,21 @@ export default {
           : "fixed",
       });
       this.$gsap.registerPlugin(this.$ScrollTrigger);
-      const conceptFades = document.querySelectorAll(".concept_fade");
-      console.log(conceptFades);
+      const leadTitles = document.querySelectorAll(".lead_title");
+      leadTitles.forEach((leadTitle, index) => {
+        this.$gsap.to(leadTitle, {
+          scrollTrigger: {
+            trigger: leadTitle,
+            start: "center, center+=200",
+            once: true,
+            toggleClass: { targets: leadTitle, className: "visible" },
+            // markers: true,
+            // id: "title",
+          },
+        });
+      });
 
+      const conceptFades = document.querySelectorAll(".concept_fade");
       conceptFades.forEach((conceptFade, index) => {
         this.$gsap.to(conceptFade, {
           scrollTrigger: {
@@ -205,5 +222,17 @@ export default {
   margin: 0 auto;
   max-width: 1480px;
   height: 100vh;
+}
+</style>
+
+<style lang="scss">
+.lead_title {
+  opacity: 0;
+  transform: translateY(30%);
+  transition: opacity 1s, transform 0.6s;
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <section :class="$style.section_gallery">
     <div :class="$style.container">
-      <h2 :class="$style.lead_title">
+      <h2 :class="[$style.lead_title, 'lead_title']">
         <span :class="$style.en"
           ><span :class="$style.en_change">GAL</span>LERY</span
         >
@@ -50,6 +50,7 @@ export default {
 @use "~/assets/scss/color" as c;
 
 .lead_title {
+  opacity: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-end;

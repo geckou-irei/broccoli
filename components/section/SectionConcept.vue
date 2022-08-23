@@ -1,12 +1,7 @@
 <template>
-  <section
-    :class="$style.section_concept"
-    data-scroll-section
-    data-scroll-section-id="section1"
-    data-scroll-section-inview
-  >
+  <section data-scroll data-scroll-speed="1" :class="$style.section_concept">
     <div :class="$style.container">
-      <h2 :class="$style.lead_title">
+      <h2 :class="[$style.lead_title, 'lead_title']">
         <span :class="$style.en"
           ><span :class="$style.en_change">CON</span>CEPT</span
         >
@@ -133,7 +128,7 @@ export default {
 <style lang="scss">
 .concept_fade {
   opacity: 0;
-  transition: opacity 0.8s linear 0s;
+  transition: opacity 0.5s linear 0.2s;
   overflow: hidden;
   &.visible {
     opacity: 1;
@@ -148,3 +143,4 @@ export default {
   }
 }
 </style>
+
