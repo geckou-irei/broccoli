@@ -112,8 +112,6 @@ export default {
             start: "center, center+=200",
             once: true,
             toggleClass: { targets: leadTitle, className: "visible" },
-            // markers: true,
-            // id: "title",
           },
         });
       });
@@ -140,8 +138,6 @@ export default {
             end: "top bottom",
             once: true,
             toggleClass: { targets: menuItem, className: `visible${index}` },
-            markers: true,
-            id: "Items",
           },
         });
       });
