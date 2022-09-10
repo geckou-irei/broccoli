@@ -46,7 +46,7 @@ export default {
 .global_list {
   position: fixed;
   top: 30rem;
-  left: 1.2rem;
+  left: 2rem;
   display: flex;
   flex-direction: column;
   gap: 0.2rem 0;

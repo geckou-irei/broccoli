@@ -1,5 +1,5 @@
 <template>
-  <section data-scroll data-scroll-speed="1" :class="$style.section_concept">
+  <section :class="$style.section_concept">
     <div :class="$style.container">
       <h2 :class="[$style.lead_title, 'lead_title']">
         <span :class="$style.en"
@@ -11,32 +11,20 @@
         <SectionConceptLead />
         <div :class="$style.section_concept_image">
           <div :class="$style.section_concept_image_container">
-            <figure
-              data-scroll
-              data-scroll-speed="1"
-              :class="[$style.concept_figure, 'concept_fade']"
-            >
+            <figure :class="[$style.concept_figure, 'concept_fade']">
               <img
                 :class="[$style.concept_image, 'concept_image']"
                 src="~/assets/img/concept_01.png"
                 alt=""
               />
             </figure>
-            <div
-              data-scroll
-              data-scroll-speed="2"
-              :class="[$style.section_concept_image_text, 'concept_fade']"
-            >
+            <div :class="[$style.section_concept_image_text, 'concept_fade']">
               <p v-for="item in 4" :key="item">
                 ダミーテキストダミーテキストダミーテキスト<br />
                 ダミーテキストダミーテキストダミーテキスト
               </p>
             </div>
-            <figure
-              data-scroll
-              data-scroll-speed="1"
-              :class="[$style.concept_figure, 'concept_fade']"
-            >
+            <figure :class="[$style.concept_figure, 'concept_fade']">
               <img
                 :class="[$style.concept_image, 'concept_image']"
                 src="~/assets/img/concept_02.png"
@@ -113,7 +101,7 @@ export default {
   }
   &_text {
     padding: 0 2rem;
-    margin-top: 2.5rem;
+    margin-top: 8rem;
     font-size: clamp(0.75rem, 0.708rem + 0.21vw, 0.875rem);
     white-space: nowrap;
     p {
@@ -143,4 +131,3 @@ export default {
   }
 }
 </style>
-

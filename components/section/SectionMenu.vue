@@ -9,9 +9,9 @@
       </h2>
       <div :class="$style.content">
         <ul :class="$style.menu_list">
-          <li :class="$style.menu_item">
+          <li :class="[$style.menu_item, 'menu_item']">
             <figure :class="$style.menu_item_image">
-              <img src="@/assets/img/menu_01.png" alt="" />
+              <img src="@/assets/img/menu_01.jpg" alt="" />
             </figure>
             <div :class="$style.menu_item_description">
               <h3 :class="$style.menu_item_title">タルタルチキン丼</h3>
@@ -22,9 +22,9 @@
               </div>
             </div>
           </li>
-          <li :class="$style.menu_item">
+          <li :class="[$style.menu_item, 'menu_item']">
             <figure :class="$style.menu_item_image">
-              <img src="@/assets/img/menu_02.png" alt="" />
+              <img src="@/assets/img/menu_02.jpg" alt="" />
             </figure>
             <div :class="$style.menu_item_description">
               <h3 :class="$style.menu_item_title">タルタルチキン丼</h3>
@@ -35,10 +35,10 @@
               </div>
             </div>
           </li>
-          <li :class="$style.menu_item">
+          <li :class="[$style.menu_item, 'menu_item']">
             <a :class="$style.menu_item_link" href="/">
               <figure :class="$style.menu_item_image">
-                <img src="@/assets/img/menu_03.png" alt="" />
+                <img src="@/assets/img/menu_03.jpg" alt="" />
               </figure>
               <div :class="$style.menu_item_description">
                 <h3 :class="$style.menu_item_title">タルタルチキン丼</h3>
@@ -50,10 +50,10 @@
               </div>
             </a>
           </li>
-          <li :class="$style.menu_item">
+          <li :class="[$style.menu_item, 'menu_item']">
             <a :class="$style.menu_item_link" href="/">
               <figure :class="$style.menu_item_image">
-                <img src="@/assets/img/menu_04.png" alt="" />
+                <img src="@/assets/img/menu_04.jpg" alt="" />
               </figure>
               <div :class="$style.menu_item_description">
                 <h3 :class="$style.menu_item_title">タルタルチキン丼</h3>
@@ -72,9 +72,6 @@
 </template>
 
 <script>
-// import { gsap } from 'gsap';
-// import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
 export default {
   name: "SectionMenu",
   // data () {
@@ -142,6 +139,59 @@ export default {
     p {
       text-align: justify;
     }
+  }
+}
+</style>
+
+<style lang="scss">
+.menu_item {
+  opacity: 0;
+  &.visible0 {
+    animation-fill-mode: forwards;
+    animation-name: fadeUp;
+    animation-duration: 1.8s;
+    animation-timing-function: cubic-bezier(0.12, 0.59, 0.41, 0.95);
+    animation-delay: 0.15;
+  }
+  &.visible1 {
+    animation-fill-mode: forwards;
+    animation-name: fadeUp;
+    animation-duration: 1.8s;
+    animation-timing-function: cubic-bezier(0.12, 0.59, 0.41, 0.95);
+    animation-delay: 0.5;
+  }
+  &.visible2 {
+    animation-fill-mode: forwards;
+    animation-name: fadeUp;
+    animation-duration: 1.8s;
+    animation-timing-function: cubic-bezier(0.12, 0.59, 0.41, 0.95);
+    animation-delay: 1;
+  }
+  &.visible3 {
+    animation-fill-mode: forwards;
+    animation-name: fadeUp;
+    animation-duration: 1.8s;
+    animation-timing-function: cubic-bezier(0.12, 0.59, 0.41, 0.95);
+    animation-delay: 1.5;
+  }
+  &.visible3 {
+    animation-fill-mode: forwards;
+    animation-name: fadeUp;
+    animation-duration: 1.8s;
+    animation-timing-function: cubic-bezier(0.12, 0.59, 0.41, 0.95);
+    animation-delay: 2;
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 </style>

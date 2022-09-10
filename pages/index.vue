@@ -19,6 +19,7 @@
         />
         <SectionMenu :class="[$style.space, $style.menu]" />
         <SectionGallery :class="[$style.space, $style.gallery]" />
+        <SectionLocation :class="[$style.space, $style.location]" />
       </div>
     </div>
   </main>
@@ -34,6 +35,12 @@ export default {
       isShow: true,
       currentSection: "top",
       sections: [
+        {
+          id: "top",
+          name: "",
+          nameJp: "",
+          component: "SectionMainVisual",
+        },
         {
           id: "concept",
           name: "CONCEPT",
@@ -120,6 +127,21 @@ export default {
             end: "top top",
             once: true,
             toggleClass: { targets: conceptFade, className: "visible" },
+          },
+        });
+      });
+
+      const menuItems = document.querySelectorAll(".menu_item");
+      menuItems.forEach((menuItem, index) => {
+        this.$gsap.to(menuItem, {
+          scrollTrigger: {
+            trigger: menuItem,
+            tart: "top bottom-=500",
+            end: "top bottom",
+            once: true,
+            toggleClass: { targets: menuItem, className: `visible${index}` },
+            markers: true,
+            id: "Items",
           },
         });
       });

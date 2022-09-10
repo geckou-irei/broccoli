@@ -38,11 +38,18 @@ export default {
     {
       src: "@/plugins/inview.js",
       ssr: false,
+      mode: "client",
     },
     {
       src: "@/plugins/locomotiveScroll.js",
       ssr: false,
+      mode: "client",
     },
+    // {
+    //   src: "~/plugins/swiper",
+    //   ssr: false,
+    //   mode: "client",
+    // },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

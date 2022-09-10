@@ -19,7 +19,7 @@
                   <img src="" alt="" />
                 </figure>
                 <h3 :class="$style.gallery_thumbnail_title"></h3>
-                <time class="thumb-date" datetime=""></time>
+                <time datetime=""></time>
               </div>
             </div>
           </div>
@@ -34,7 +34,7 @@
 // import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export default {
-  name: "SectionConcept",
+  name: "SectionGallery",
   // data () {
 
   // },
